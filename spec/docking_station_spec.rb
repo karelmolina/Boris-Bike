@@ -34,4 +34,11 @@ describe DokingStation do
       expect {subject.bike_release}.to raise_error 'no bikes available'
     end
   end
+
+  describe "#dock" do
+    it "raise an error when full" do
+      subject.dock(Bike.new)
+      expect{subject.dock Bike.new}.to raise_error "Doking station full"
+    end
+  end
 end

@@ -9,6 +9,7 @@ attr_reader :bike
  end
 
  def dock bike
+   fail "Doking station full" unless @bike
   @bike = bike
  end
 
