@@ -1,7 +1,15 @@
 require_relative 'bike'
 class DokingStation
 
+attr_reader :bike
+
  def bike_release
-   Bike.new
+   fail 'no bikes available' unless @bike
+   @bike
  end
+
+ def dock bike
+  @bike = bike
+ end
+
 end
